@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: complex-calculator-devonindustries
+Version: 1.0.0
+Summary: Framework for performing complex arithmetic
+Home-page: https://github.com/devonindustries/complex_calculator
+Author: Joshua Baker
+Author-email: jd.baker01@hotmail.co.nz
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/devonindustries/complex_calculator/issues
+Description: # Complex Calculator
+         A calculator for performing complex arithmetic.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
