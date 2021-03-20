@@ -9,10 +9,11 @@ class Complex:
     # Initiation Function
     #----------------
 
-    def __init__(self, real, imaginary):
+    def __init__(self, real, imaginary, epsilon=10**-8):
         self.real = real
         self.imaginary = imaginary
-
+        self.epsilon = epsilon
+        
     #----------------
     # Built-in Arithmetic Operations
     #----------------
@@ -111,20 +112,11 @@ class Complex:
 
     def __pow__(self, power):
 
-        if type(power) == int:
-            
-            if power == 0:
-                return 1
-            elif power > 0:
-                res = self
-                for i in range(1, power):
-                    res *= self
-            else:
-                res = Complex(1,0) / self
-                for i in range(-1, power, -1):
-                    res *= Complex(1,0) / self
-
-        return res
+        # Use de-Moivre's Theorem to calculate the result of the power
+        return Complex(
+            self.__convergent(abs(self)**power * math.cos(power * self.arg())),
+            self.__convergent(abs(self)**power * math.sin(power * self.arg()))
+        )
     
     #----------------
     # Type Conversion
@@ -144,6 +136,13 @@ class Complex:
             im_str = str(self.imaginary) + "i"
 
         return re_str + im_str
+        
+    #----------------
+    # Private Functions
+    #----------------    
+    
+    def __convergent(self, value):
+        return value if abs(value - int(value)) > self.epsilon else int(value)
 
     #----------------
     # Complex Methods
@@ -174,7 +173,7 @@ class Complex:
                 return math.atan(abs(self.real / self.imaginary)) + math.pi / 2
             else:
                 return -math.atan(abs(self.imaginary / self.real)) - math.pi / 2
-
+            
     def conjugate(self):
         '''
         Returns the conjugate of the complex number
