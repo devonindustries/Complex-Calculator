@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: complex-calculator-devonindustries
-Version: 1.0.0
+Version: 1.0.1
 Summary: Framework for performing complex arithmetic
 Home-page: https://github.com/devonindustries/complex_calculator
 Author: Joshua Baker
@@ -8,8 +8,15 @@ Author-email: jd.baker01@hotmail.co.nz
 License: UNKNOWN
 Project-URL: Bug Tracker, https://github.com/devonindustries/complex_calculator/issues
 Description: # Complex Calculator
-         A calculator for performing complex arithmetic.
+         A calculator for performing complex arithmetic. Contains one class called 'Complex', which takes two arguments primarily.
         
+         To create a complex number, say 1+i, we would write Complex(1,1). Arithmetic with complex numbers in this module is defined in the usual way, so to add complex numbers, all we need to write is
+        
+         ```
+        Complex(1, 0) + Complex(0, 1)
+        ```
+        
+        Which would return `Complex(1, 1)`, or as a string, `'1+i'`.
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License

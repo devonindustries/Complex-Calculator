@@ -131,9 +131,9 @@ class Complex:
             re_str = str(self.real)
 
         if self.imaginary > 0 and self.real != 0:
-            im_str = "+" + str(self.imaginary) + "i"
+            im_str = "+" + str(self.imaginary) + "i" if self.imaginary != 1 else "+i"
         elif self.imaginary > 0 or self.imaginary < 0:
-            im_str = str(self.imaginary) + "i"
+            im_str = str(self.imaginary) + "i" if self.imaginary != 1 else "i"
 
         return re_str + im_str
         

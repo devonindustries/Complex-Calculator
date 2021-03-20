@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="complex-calculator-devonindustries",
-    version="1.0.0",
+    version="1.0.1",
     author="Joshua Baker",
     author_email="jd.baker01@hotmail.co.nz",
     description="Framework for performing complex arithmetic",
